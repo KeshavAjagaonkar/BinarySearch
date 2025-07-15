@@ -40,7 +40,9 @@ int main(){
         arr.push_back(x);
     }
     print(arr);
-
-
+    int k = 4;
+    int index=binarySearch(arr, k);
+    cout << endl;
+    cout << index;
 }
 
