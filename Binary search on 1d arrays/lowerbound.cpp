@@ -9,24 +9,23 @@ void print(vector<int> &arr){
     }
     cout << endl;
 }
-int binarySearch(vector<int>&arr,int k)
+int lowerBound(vector<int>&arr,int k)
 {
     int n = arr.size();
     int low = 0;
     int high = n - 1;
+    int ans = n;
     while(low<=high){
         int mid = (low + high) / 2;
-        if(arr[mid]==k){
-            return mid;
-        }
-        else if(arr[mid]>k){
+        if(arr[mid]>=k){
+            ans = arr[mid];
             high = mid - 1;
         }
-        else{
-            low = mid + 1;
-        }
+       else{
+           low = mid + 1;
+       }
     }
-    return -1;
+    return ans;
 }
 
 int main(){
@@ -40,8 +39,8 @@ int main(){
         arr.push_back(x);
     }
     print(arr);
-    int k = 4;
-    int index=binarySearch(arr, k);
+    int k =9;
+    int index=lowerBound(arr, k);
     cout << endl;
     cout << index;
 }
