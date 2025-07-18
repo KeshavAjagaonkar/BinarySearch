@@ -11,6 +11,7 @@ void print(vector<int> &arr)
     }
     cout << endl;
 }
+// this example does not contain duplicates , so for duplicate we need to consider more edge cases ok ....think about it wisely without any confusion.
 int search(vector<int> &arr, int key)
 {
     // Code Here
