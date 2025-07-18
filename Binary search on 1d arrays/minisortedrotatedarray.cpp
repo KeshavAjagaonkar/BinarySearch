@@ -17,6 +17,12 @@ int findmin(vector<int>& arr) {
         int mini = INT_MAX;
         while(low<=high){
             int mid = (low + high) / 2;
+            if(arr[low]==arr[mid] && arr[mid]==arr[high]){
+                mini = min(arr[low], mini);
+                low = low + 1;
+                high = high - 1;
+                continue;
+            }
             if(arr[low]<=arr[mid]){
                 mini = min(arr[low], mini);
                 low = mid + 1;
